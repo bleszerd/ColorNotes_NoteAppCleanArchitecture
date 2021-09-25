@@ -7,10 +7,7 @@ import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.data.data_sourc
 import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.data.data_source.NoteDatabase.Companion.DATABASE_NAME
 import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.data.repository.NoteRepositoryImpl
 import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.domain.repository.NoteRepository
-import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.domain.use_case.AddNoteUseCase
-import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.domain.use_case.DeleteNotesUserCase
-import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.domain.use_case.GetNotesUseCase
-import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.domain.use_case.NoteUseCases
+import com.github.bleszerd.cleanarchitecturenoteapp.feature_note.domain.use_case.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,6 +41,7 @@ object AppModule {
             getNotesUseCase = GetNotesUseCase(repository),
             deleteNotesUserCase = DeleteNotesUserCase(repository),
             addNoteUseCase = AddNoteUseCase(repository),
+            getNoteUseCase = GetNoteUseCase(repository)
         )
     }
 }
